@@ -1,0 +1,45 @@
+﻿/*
+[name]青[/name]
+[iconbgcolor]#6ABDDB[/iconbgcolor]
+Powered by Discuz! X
+*/
+
+body { background: #6ABDDB url(eis_bg.png) repeat-x 0 0; }
+.eis_bgtop{ background:url(eis_bgtop.png) no-repeat center top!important;}
+.eis_wpt{ background:url(eis_wpt.jpg) no-repeat 0 0!important;}
+#eis_toptb{ background:#93CEE5;}
+
+
+#eis_nv { background:url(eis_nv.png) no-repeat 0 0;}
+	#eis_nv li { background:url(eis_nv_li.png) no-repeat 100% center;}
+			#eis_nv li.a a { background:url(eis_nv_a.png) no-repeat center center;}
+			#eis_nv li a:hover { background:url(eis_nv_ho.png) no-repeat center center;}
+			#eis_nv li.hover a:hover, #eis_nv li.hover a { background:url(eis_nv_ho.png) no-repeat center center; }
+#qmenu{ color:#FFF!important; background:url(qmenu.png) no-repeat 0 0;}			
+
+#ct .fl .bm{ background:url(eis_bar.png) repeat-x 0 0;}
+#ct .fl .bm .bm_h{ background:url(eis_bar_r.jpg) no-repeat right 0; }
+#ct .fl .bm .bm_h h2 { background:url(eis_bar_l.jpg) no-repeat 0 0; }
+#ct .fl .bm .bm_h .o ,#ct .fl .bm .bm_h .o a, #ct .fl .bm .bm_h .y, #ct .fl .bm .bm_h .y a{ color:#fff!important;}
+
+.eis_bgbot{background:url(eis_wpb.png) no-repeat center bottom;}
+.eis_wpbot{ height:230px!important; background:none;}
+.eis_ft{  height:230px!important; background:url(eis_ft.png) no-repeat center bottom;}
+.eis_ft #ft{ color:#333!important;padding:150px 10px 0px 10px;}
+.eis_ft a{ color:#333!important;}
+
+#eis_thread_types{  background:url(eis_title_l.png) no-repeat left 0;}
+	#thread_types{  background:url(eis_title.png) no-repeat right top;}
+	#modmenu{ background:url(eis_title.png) no-repeat right 0;}
+
+/* 重定义按钮 */
+.pgs #newspecial, .pgs #newspecialtmp { float: left; background: url(pn_post.png) no-repeat 0 0; }
+#post_reply, #post_replytmp { float: left; background: url(pn_reply.png) no-repeat 0 0; }
+#newspecial img, #newspecialtmp img, #post_reply img, #post_replytmp img { opacity: 0; filter: alpha(opacity=0); }
+.moodfm_btn { background-image: url(mood_input_btn.png) !important; }
+#create_group_btn { display: block; background: url(create_group.png) no-repeat 0 0; }
+#create_group_btn img { opacity: 0; filter: alpha(opacity=0); }
+.el .ec .hot, .clct_list .xld .m { background-image: url(hotspot.gif); }
+.pll .s { background-image:url(polljoins.gif); }
+.pg_follow #fastpostsubmit { background:url(flw_post.png) no-repeat 0 0}
+

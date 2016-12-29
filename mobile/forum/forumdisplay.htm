@@ -1,0 +1,209 @@
+<!--{subtemplate common/header}-->
+<!--{if !$_G[setting][mobile][mobilesimpletype]}-->
+<!--{if $_G['forum']['type'] == 'forum'}-->
+ <div class="w b1 c4 bd1 nav_a"><img src="{$iterwapdir}/mobile/img/nav_rabi2.png" alt="$_G['setting']['navs'][2]['navname']" class="nav_rabi" /><a href="forum.php" title="$_G['setting']['navs'][2]['navname']" class="f1_a f2_a">$_G['setting']['navs'][2]['navname']</a> <em> &gt; </em> <a href="forum.php?mod=forumdisplay&fid={$_G['forum']['fid']}" class="f1_a f2_a nav_se">{$_G['forum']['name']}</a></div>
+<!--{else}-->
+ <div class="w b1 c4 bd1 nav_a"><img src="{$iterwapdir}/mobile/img/nav_rabi2.png" alt="$_G['setting']['navs'][2]['navname']" class="nav_rabi" /><a href="forum.php" title="$_G['setting']['navs'][2]['navname']" class="f1_a f2_a">$_G['setting']['navs'][2]['navname']</a> <em> &gt; </em> <a href="forum.php?mod=forumdisplay&fid={$forum_up['fid']}">$forum_up['name']</a> <em> &gt; </em> {$_G['forum']['name']}</div>
+<!--{/if}-->
+<!--{/if}-->
+<p class="f3_a f">
+	<!--{if !$subforumonly}-->
+    	{lang index_today}$_G[forum][todayposts]<span class="pipe">|</span>{lang index_threads}$_G[forum][threads]</span><!--{/if}--><!--{if $_G[uid]}--><span class="pipe">|</span><a href="home.php?mod=spacecp&ac=favorite&type=forum&id={$_G[fid]}" title="{lang forum_favorite}" >{lang forum_favorite}</a><!--{/if}-->
+</p>
+
+
+<div class="f3_a f">
+<!--{if !$_G['forum']['allowspecialonly']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" title="{lang send_threads}" >{lang send_threads}</a><span class="pipe">|</span><!--{/if}--><!--{if $_G['group']['allowpostpoll']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&special=1">{lang post_newthreadpoll}</a><span class="pipe">|</span><!--{/if}--><!--{if $_G['group']['allowpostreward']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&special=3">{lang post_newthreadreward}</a><span class="pipe">|</span><!--{/if}--><!--{if $_G['group']['allowpostdebate']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&special=5">{lang post_newthreaddebate}</a><span class="pipe">|</span><!--{/if}-->
+<!--{if $_G['setting']['threadplugins']}-->
+<!--{loop $_G['forum']['threadplugin'] $tpid}-->
+<!--{if array_key_exists($tpid, $_G['setting']['threadplugins']) && @in_array($tpid, $_G['group']['allowthreadplugin'])}-->
+<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&specialextra=$tpid">{$_G[setting][threadplugins][$tpid][name]}</a><span class="pipe">|</span>
+<!--{/if}-->
+<!--{/loop}-->
+<!--{/if}-->
+</div>
+
+<!--{hook/forumdisplay_top_mobile}-->
+<!--//forumdisplay_list template start-->
+
+<!--{if !$subforumonly}-->
+
+    <div class="tl">
+    	<div class="bm">
+        	<div class="w2 bd13 pagin_box_a"> <span class="bt f">$_G['forum'][name]  </span>
+			
+			<a href="forum.php?mod=forumdisplay&fid={$_G[fid]}&filter=author&orderby=dateline" class="<!--{if $_GET[orderby] != 'dateline'}-->bt f<!--{else}-->bt bt1 p_next_a<!--{/if}-->">[{lang viewnewthread}]</a>
+
+			<a href="forum.php?mod=forumdisplay&fid={$_G[fid]}" class="<!--{if $_GET[orderby] != 'dateline'}-->bt bt1 p_next_a<!--{else}-->bt f<!--{/if}-->">[{lang list_default_sort}]</a>
+
+
+			</div>
+            <!--{if $_G['forum_threadcount']}-->
+				<!--{loop $_G['forum_threadlist'] $key $thread}-->
+                	<!--{if $thread['displayorder'] > 0 && !$displayorder_thread}-->
+                		{eval $displayorder_thread = 1;}
+                    <!--{/if}-->
+                	<div class="bm_c<!--{if $thread['displayorder'] == 0 && $displayorder_thread == 1}--> bt{eval unset($displayorder_thread);}<!--{/if}-->">
+                    <!--{if !$thread['forumstick'] && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
+                        <!--{if $thread['related_group'] == 0 && $thread['closed'] > 1}-->
+                            <!--{eval $thread[tid]=$thread[closed];}-->
+                        <!--{/if}-->
+                        <!--{if $groupnames[$thread[tid]]}-->
+                            [<a href="forum.php?mod=forumdisplay&fid={$groupnames[$thread[tid]][fid]}" target="_blank">{lang group}</a>]
+                        <!--{/if}-->
+                    <!--{/if}-->
+<div class="w1 bd2" style="">
+	                    <!--{if !$_G[setting][mobile][mobilesimpletype]}--><p class="pb1 c2" id="joke8655">
+                     <img src="./uc_server/avatar.php?uid=$thread[authorid]&size=small" width="25" height="25" class="joke_head_a" alt="" />
+                        <!--{if $thread['authorid'] && $thread['author']}-->
+                            <a href="home.php?mod=space&uid=$thread[authorid]">$thread[author]</a>
+                        <!--{else}-->
+                            <!--{if $_G['forum']['ismoderator']}-->
+                                <a href="home.php?mod=space&uid=$thread[authorid]" >{lang anonymous}</a>
+                            <!--{else}-->
+                                $_G[setting][anonymoustext]
+                            <!--{/if}-->
+                        <!--{/if}-->
+{lang poston}:$thread[dateline]	</p>
+                    <!--{/if}-->
+
+<div class="joke_box joke_list_page"> <p>
+					<!--{if $thread['moved']}-->
+						<!--{eval $thread[tid]=$thread[closed];}-->
+					<!--{/if}-->
+                    <!--{hook/forumdisplay_thread_mobile $key}-->
+                    <a href="forum.php?mod=viewthread&tid=$thread[tid]" $thread[highlight] >
+                    <!--{if $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+                        <!--{if $thread[folder] == 'lock'}-->
+                            <img src="{IMGDIR}/folder_lock.gif" />
+                        <!--{elseif $thread['special'] == 1}-->
+                            <img src="{IMGDIR}/pollsmall.gif" alt="{lang thread_poll}" />
+                        <!--{elseif $thread['special'] == 2}-->
+                            <img src="{IMGDIR}/tradesmall.gif" alt="{lang thread_trade}" />
+                        <!--{elseif $thread['special'] == 3}-->
+                            <img src="{IMGDIR}/rewardsmall.gif" alt="{lang thread_reward}" />
+                        <!--{elseif $thread['special'] == 4}-->
+                            <img src="{IMGDIR}/activitysmall.gif" alt="{lang thread_activity}" />
+                        <!--{elseif $thread['special'] == 5}-->
+                            <img src="{IMGDIR}/debatesmall.gif" alt="{lang thread_debate}" />
+                        <!--{elseif in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                            <img src="{IMGDIR}/pin_$thread[displayorder].gif" alt="$_G[setting][threadsticky][3-$thread[displayorder]]" style="width:18px;"/>
+                        <!--{/if}-->
+                    <!--{else}-->
+                    	<!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                        	[{lang thread_sticky}]
+                        <!--{/if}-->
+                    <!--{/if}-->
+					                    <!--{if $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+                        <!--{if $thread['displayorder'] == 0}-->
+                                <!--{if $thread[recommendicon] && $filter != 'recommend'}-->
+                                    <img src="{IMGDIR}/recommend_$thread[recommendicon].gif" align="absmiddle" alt="recommend" title="{lang thread_recommend} $thread[recommends]" />
+                                <!--{/if}-->
+                                <!--{if $thread['digest'] > 0 && $filter != 'digest'}-->
+                                    <img src="{IMGDIR}/digest_$thread[digest].gif" align="absmiddle" alt="digest" title="{lang thread_digest} $thread[digest]" />
+                                <!--{/if}-->
+                        <!--{/if}-->
+                    <!--{elseif $_G['setting']['mobile']['mobilesimpletype'] == 1}-->
+                    	<!--{if $thread['displayorder'] == 0}-->
+                                <!--{if $thread[recommendicon] && $filter != 'recommend'}-->
+                                    [{lang thread_recommend}]
+                                <!--{/if}-->
+
+                                <!--{if $thread['digest'] > 0 && $filter != 'digest'}-->
+                                    [{lang thread_digest}]
+                                <!--{/if}-->
+                        <!--{/if}-->
+                    <!--{/if}-->
+                   	{$thread[subject]}</a>
+			                    <!--{if !$_G[setting][mobile][mobilesimpletype]}-->
+<a href="forum.php?mod=viewthread&tid=$thread[tid]" $thread[highlight] class="btn_joke">
+<img src="{$iterwapdir}/mobile/img/03.jpg" alt="{lang forum_views}" class="ico_joke" /><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}--></a>
+
+    <a href="forum.php?mod=viewthread&tid=$thread[tid]" $thread[highlight] class="btn_joke">
+	<img src="{$iterwapdir}/mobile/img/05.jpg" alt="{lang forum_posts}" class="ico_joke" />
+	<!--{if $thread[replies] > 0}-->{$thread[replies]}<!--{else}-->0<!--{/if}--></a>
+
+ <!--{/if}-->			
+					</p> 
+</div>
+
+
+</div>
+
+
+                    </div>
+                <!--{/loop}-->
+            <!--{else}-->
+            <div class="bm_c">{lang forum_nothreads}</div>
+            <!--{/if}-->
+        </div>
+    </div>$multipage
+	
+
+
+
+    
+<!--{/if}-->
+
+<!--{if !$_G[setting][mobile][mobilesimpletype]}-->
+    <!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || $_G['forum']['threadsorts']}-->
+        <!--{if $_G['forum']['threadtypes']}-->
+            <div class="w2 bd13 pagin_box_a">
+            <span class="bt f">{lang threadtype} </span>
+            <a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="<!--{if $_GET['filter'] != 'typeid'}-->bt bt1 p_next_a<!--{else}-->bt f<!--{/if}-->">{lang forum_viewall}</a>
+            <!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
+                 <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]" {if $_GET['filter'] == 'typeid' && $_GET['typeid'] == $id} class="bt bt1 p_next_a"{else} class="bt f"{/if}>$name</a>
+            <!--{/loop}-->
+            </div>
+
+        <!--{/if}-->
+
+        <!--{if $_G['forum']['threadsorts']}-->
+             <div class="w2 bd13 pagin_box_a">
+            <span class="bt f">{lang threadsort} </span>
+            <!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
+                <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]" class="<!--{if $_GET[sortid] == $id}-->bt f<!--{else}-->bt bt1 p_next_a<!--{/if}-->">$name</a>
+            <!--{/loop}-->
+            </div>
+        <!--{/if}-->
+    <!--{/if}-->
+<!--{/if}-->
+<!--//forumdisplay_list template end-->
+<!--{hook/forumdisplay_bottom_mobile}-->
+<!--{eval $i = 1;}-->
+<!--{if $subexists && $_G['page'] == 1}-->
+
+
+<div class="tui_top clearfix">
+    <p class="title">{lang forum_subforums}</p>
+</div>
+
+    <div class="w3 push_box tui_wrap">
+    <div class="tui_box">
+        <div class="pd1">
+            <!--{loop $sublist $sub}-->
+            
+            <div class="w3_s bd4">
+                <div id="" name="is_push_v" class="weixin_box wxb_v clearfix">
+                    <a href="forum.php?mod=forumdisplay&fid={$sub[fid]}" class="w_link">
+			<!--{if $sub[icon]}-->$sub[icon]<!--{else}--><img src="./static/image/common/forum.gif" /></a><!--{/if}-->
+					<a href="forum.php?mod=forumdisplay&fid={$sub[fid]}" class="f7_a">{$sub['name']}</a>
+                    <p class="f8_a">$sub[description]</p>
+                </div>
+            </div>
+              <!--{/loop}-->
+            
+        </div>
+        <a href="forum.php" onclick="javascript:history.back();return false;" class="more_wx_tog" >
+            <p>{lang goback}</p>
+            <img src="$iterwapdir/mobile/img/ico_arrow.png" class="ico_arrow" />
+        </a>
+
+    </div>
+
+
+	</div>
+
+<!--{/if}-->
+
+<!--{subtemplate common/footer}-->

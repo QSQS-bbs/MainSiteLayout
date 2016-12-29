@@ -1,0 +1,43 @@
+<!--{template common/header}-->
+
+<div class="w2 bd13 pagin_box_a">
+
+<a href="{if $forcefid}forum.php?mod=forumdisplay{$forcefid}{else}forum.php{/if}" title="{lang return_forum}" class="bt f">{lang return_forum}</a>
+<a href="{if $forcefid}forum.php?mod=forumdisplay{$forcefid}{else}forum.php{/if}" title="{lang return_forum}" class="bt bt1 p_next_a">{lang my_posts}</a>
+</div>
+
+
+	<form method="post" autocomplete="off" name="delform" id="delform" action="home.php?mod=space&do=thread&view=all&order=dateline" onsubmit="showDialog('{lang del_select_thread_confirm}', 'confirm', '', '$(\'delform\').submit();'); return false;">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+        <input type="hidden" name="delthread" value="true" />
+        <!--{if $list}-->
+        
+            <!--{loop $list $thread}-->
+            <div class="w1 bd2">	<p class="pb1 c2" >	
+                    <!--{if $viewtype == 'reply' || $viewtype == 'postcomment'}-->
+                        <a href="forum.php?mod=redirect&goto=findpost&ptid=$thread[tid]&pid=$thread[pid]" target="_blank">$thread[subject]</a>
+                    <!--{else}-->
+                        <a href="forum.php?mod=viewthread&tid=$thread[tid]" target="_blank" {if $thread['displayorder'] == -1}class="recy"{/if}>$thread[subject]</a>
+                    <!--{/if}-->
+                <!--{if $viewtype != 'postcomment'}-->
+                    <!--{if !$actives[me]}-->
+<a href="home.php?mod=space&uid=$thread[authorid]">$thread[author]</a>$thread[dateline]
+                    <!--{/if}-->
+
+    <a href="forum.php?mod=viewthread&tid=$thread[tid]" class="btn_joke" > <img src="{$iterwapdir}/mobile/img/05.jpg" alt="{lang forum_posts}" class="ico_joke" />$thread[replies]{lang forum_posts}</a>	
+
+                <!--{/if}-->	</p>
+            </div>
+            <!--{/loop}-->
+        <!--{else}-->
+        	<div class="bm_c">
+            {lang no_related_posts}
+            </div>
+        <!--{/if}-->
+        </table>
+    </form>
+<!--{if $multi}--><div class="w2 bd13 pagin_box_a">$multi</div><!--{/if}-->
+
+
+
+<!--{template common/footer}-->

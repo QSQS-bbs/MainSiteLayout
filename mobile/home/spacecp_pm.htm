@@ -1,0 +1,26 @@
+<!--{template common/header}-->
+
+<div class="f3_a f"><a href="{if $forcefid}forum.php?mod=forumdisplay{$forcefid}{else}forum.php{/if}" title="{lang return_forum}">{lang return_forum}</a> <span class="pipe">|</span> <a href="home.php?mod=space&do=pm" title="{lang pm}">{lang pm}</a> <span class="pipe">|</span> <a href="home.php?mod=spacecp&ac=pm" title="{lang send_pm}" class="xw1">{lang send_pm}</a></div>
+
+<div class="w reg_a">
+<p class="pb2 c2">{lang send_pm}<br/></p>
+<!--{if $op != ''}-->
+	<div class="bm_c">{lang user_mobile_pm_error}</div>
+<!--{else}-->
+    <form id="pmform_{$pmid}" name="pmform_{$pmid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=pm&op=send&touid=$touid&pmid=$pmid&mobile=yes"  class="pub_a" >
+         <div class="w">
+            <input type="hidden" name="referer" value="{echo dreferer();}" />
+            <input type="hidden" name="pmsubmit" value="true" />
+            <input type="hidden" name="formhash" value="{FORMHASH}" />
+            <!--{if !$touid}-->
+            <label for="username"><strong>{lang addressee}</strong></label>
+            <input type="text" id="username" name="username" value="" class="tx inp_a" />
+            <!--{/if}-->
+            <span class="xg2">{lang user_mobile_pm_comment}</span>
+            <textarea rows="8" cols="40" name="message"  class="ta pub_tx_a" id="sendmessage" ></textarea>
+            <input type="submit" name="pmsubmit_btn" id="pmsubmit_btn" value="{lang send}" class="bt bt1 btn_st01_a f1_a" />
+        </div>
+    </form>
+<!--{/if}-->
+</div>
+<!--{template common/footer}-->

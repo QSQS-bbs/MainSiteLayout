@@ -1,0 +1,51 @@
+<!--{subtemplate mobile/common/header}-->
+<!--{hook/index_top_mobile}-->
+<div class="gather_wrap">
+<!--{if $forum_favlist}-->
+     <div class="gather_block w1 clearfix" id="joke103" style="">
+        <a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum"><img src="{$iterwapdir}/mobile/img/bbs/favorite.jpg" class="cover" /></a>
+        <p class="info">
+		<a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum" class="title">{lang my_favorites_forums}</a>
+		</p>
+		{eval $i=1;}
+		<!--{loop $forum_favlist $key $val}-->
+
+			 <a href="forum.php?mod=forumdisplay&fid={$val['id']}" class="w ad_box_b">$val['title']</a>
+			 <a href="home.php?mod=spacecp&ac=favorite&op=delete&favid={$val[favid]}&type=forum" title="{lang favorite_delete}" class="w ad_box_b">[x]</a>
+
+		  {eval $i++;}
+		<!--{/loop}-->
+	</div>
+
+<!--{/if}-->
+
+
+     <!--{loop $catlist $key $cat}-->
+    <div class="gather_block w1 clearfix">
+        <a href="forum.php?viewgid={if $cat[fid] != $_GET[viewgid]}{$cat[fid]}{else}0{/if}" class="title"><img src="{$iterwapdir}/mobile/img/bbs/{if $cat[fid] != $_GET[viewgid]}{$cat[fid]}{else}0{/if}.jpg" class="cover" /></a>
+        <p class="info">
+		<!--{if $_G[setting][mobile][mobileforumview] == 1}--><a href="forum.php?viewgid={if $cat[fid] != $_GET[viewgid]}{$cat[fid]}{else}0{/if}" class="title">$cat[name]</a><!--{else}--><span class="title">$cat[name]</span><!--{/if}-->
+
+            <span class="summary">
+			        <!--{if $_G[setting][mobile][mobileforumview] == 0 || ($cat[fid] == $_GET[viewgid])}-->
+            {eval $i=1;}
+            <!--{loop $cat[forums] $forumid}-->
+                    <!--{eval $forum=$forumlist[$forumid];}-->
+                    <a href="forum.php?mod=forumdisplay&fid={$forum['fid']}" {if $forum_favlist[$forumid]}class="xi1"{/if}>{$forum[name]}</a> <!--{if $forum[todayposts] > 0}--><font class="xg1">($forum[todayposts])</font><!--{/if}--><span class="pipe">|</span>
+               
+                {eval $i++;}
+            <!--{/loop}-->
+        <!--{/if}-->
+			</span>
+        </p>
+    </div>
+	<!--{/loop}-->
+
+</div>
+
+<!--{hook/index_middle_mobile}-->
+ <div class="c2 a3">
+	{lang index_today}$todayposts<span class="pipe">|</span>{lang index_members}$_G['cache']['userstats']['totalmembers']<!--{if empty($gid) && $_G['setting']['whosonlinestatus'] && $onlinenum}--><span class="pipe">|</span>{lang online}$onlinenum<!--{/if}-->
+</div>
+<!--{hook/index_bottom_mobile}-->
+<!--{subtemplate mobile/common/footer}-->

@@ -1,0 +1,76 @@
+<!--{template common/header}-->
+
+
+
+<div class="w reg_a">
+	<p class="pb2 c2">{$_G['setting']['reglinkname']}<span class="pipe">|</span><a href="member.php?mod=logging&action=login" title="{lang login}">{lang login}</a>
+	</p>
+		<p class="pb2 c2">
+	<a href="{if $forcefid}forum.php?mod=forumdisplay{$forcefid}{else}forum.php{/if}" title="{lang return_forum}">{lang return_forum}</a><span class="pipe">|</span><a href="javascript:history.back();" onclick="javascript:history.back();" title="{lang goback}" >{lang goback}</a>
+	</p>
+<form method="post" autocomplete="off" name="register" id="registerform" enctype="multipart/form-data" action="member.php?mod={$_G[setting][regname]}&mobile=yes">
+<input type="hidden" name="regsubmit" value="yes" />
+<input type="hidden" name="formhash" value="{FORMHASH}" />
+<!--{eval $dreferer = str_replace('&amp;', '&', dreferer());}-->
+<input type="hidden" name="referer" value="$dreferer" />
+<input type="hidden" name="activationauth" value="{if $_GET[action] == 'activation'}$activationauth{/if}" />
+<input type="hidden" name="agreebbrule" value="$bbrulehash" id="agreebbrule" checked="checked" />
+
+        <div class="pb1">
+            <p class="pb2 c2">{lang username}*({lang reg_username})</p>
+	<label><input type="text" id="username" name="{$_G['setting']['reginput']['username']}" autocomplete="off" size="25" maxlength="15" value="" class="tx inp_a" /></label>
+		</div>
+
+	        <div class="pb1">
+            <p class="pb2 c2">{lang password}*</p>
+	<label><input type="password" name="{$_G['setting']['reginput']['password']}" size="25" id="password" class="tx inp_a" /></label>
+		    </div>
+			
+	        <div class="pb1">
+            <p class="pb2 c2">{lang password_confirm}*</p>
+	<label><input type="password" name="{$_G['setting']['reginput']['password2']}" size="25" id="password2" value="" class="tx inp_a" /></label>
+            </div>
+			
+			<div class="pb1">
+            <p class="pb2 c2">{lang email}*</p>
+	<label><input type="text" name="{$_G['setting']['reginput']['email']}" autocomplete="off" size="25" id="email" class="tx inp_a" /> </label>
+            </div>
+			
+<!--{if empty($invite) && ($_G['setting']['regstatus'] == 2 || $_G['setting']['regstatus'] == 3)}-->
+			<div class="pb1">
+            <p class="pb2 c2">{lang invite_code}<!--{if $_G['setting']['regstatus'] == 2 && !$invitestatus}-->*<!--{/if}--></p>
+	<label><input type="text" name="invitecode" autocomplete="off" size="25" id="invitecode" class="tx inp_a" /></label>
+            </div>
+<!--{/if}-->
+
+<!--{if $_G['setting']['regverify'] == 2}-->
+			<div class="pb1">
+            <p class="pb2 c2">{lang register_message}*</p>
+	<label><input type="text" id="regmessage" name="regmessage" autocomplete="off" size="25" tabindex="1" class="tx inp_a" /> </label>
+            </div>
+	<p class="pb2 c2">{lang register_message1}</p>
+<!--{/if}-->
+<!--
+<!--{loop $_G['cache']['fields_register'] $field}-->
+<!--{if $htmls[$field['fieldid']]}-->
+            <div class="pb1">
+	        <p class="pb2 c2">$field[title]*
+	        <br />
+	$htmls[$field['fieldid']]<!--{if $field['required']}--><!--{/if}--></p>
+	        </div>
+<!--{/if}-->
+<!--{/loop}-->
+-->
+
+<!--{if $secqaacheck || $seccodecheck}-->
+	<!--{subtemplate common/seccheck}-->
+<!--{/if}-->
+
+		<input type="submit" name="regsubmit" id="registerformsubmit" value="{lang submit}" class="bt bt1 btn_st01_a f1_a" />
+
+
+
+</form>
+</div>
+<!--{eval updatesession();}-->
+<!--{template common/footer}-->

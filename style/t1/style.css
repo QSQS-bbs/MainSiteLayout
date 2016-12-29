@@ -1,0 +1,84 @@
+﻿/*
+[name]红[/name]
+[iconbgcolor]#B70000[/iconbgcolor]
+Powered by Discuz! X
+*/
+
+html { background: #B70000 url(eis_bg.png) repeat-x 0 0; }
+body { background: #B70000 url(eis_bg.png) repeat-x 0 0;}
+.eis_bgtop{background:url(eis_bgtop.png) no-repeat 0 0!important }
+#eis_toptb{ background:#F4E488!important}
+#eis_toptb a{ color:#333;}
+#eis_toptb a.xi1{ color: #C64009!important;}
+.eis_wpt{ background:url(eis_wpt.jpg) no-repeat 0 0!important;}
+
+#um,#um a,#um .pipe{ color:#333!important;}
+
+#eis_nv { background:url(eis_nv.png) no-repeat 0 0;}
+#eis_nv li { background:url(eis_nv_li.png) no-repeat 100% center;}
+#eis_nv li.a a { background:url(eis_nv_a.png) no-repeat center center;}
+#eis_nv li a:hover { background:url(eis_nv_ho.png) no-repeat center center;}
+#eis_nv li.hover a:hover, #eis_nv li.hover a { background:url(eis_nv_ho.png) no-repeat center center; }
+
+#qmenu{ color:#FFF!important; background:url(qmenu.png) no-repeat 0 0;}
+#ct .fl .bm{ background:url(eis_bar.png) repeat-x 0 0;}
+#ct .fl .bm .bm_h{ background:url(eis_bar_r.jpg) no-repeat right 0; }
+#ct .fl .bm .bm_h h2 { background:url(eis_bar_l.jpg) no-repeat 0 0; }
+#ct .fl .bm .bm_h .o ,#ct .fl .bm .bm_h .o a, #ct .fl .bm .bm_h .y, #ct .fl .bm .bm_h .y a{ color:#333!important;}
+
+.eis_wpbot{ background:none;}
+.eis_ft{ background:url(eis_ft.png) no-repeat bottom center; }
+.eis_ft #ft{ color:#FFF!important;}
+.eis_ft a{ color:#FFF!important;}
+
+.xi2, .xi2 a, .bm_h .y ,.bm_h .y a ,.emp a, .tbmu a.a{ color: #C64009!important; }
+.tbmu a{ color:#666;}
+.fl .bm_h h2 a, .xi1, #um .new, .topnav .new, .sch .new, .el .ec .hot em, .pll .s a.joins, #diy_backup_tip .xi2 { color: #BA350F; }
+.pll .s a.go { color: #FFF; }
+#atarget {color: #C64009!important;}
+
+#eis_thread_types{  background:url(eis_title_l.png) no-repeat left 0;}
+	#thread_types{  background:url(eis_title.png) no-repeat right top;}
+	#modmenu{ background:url(eis_title.png) no-repeat right 0;}
+	
+/* 重定义按钮 */
+.pgs #newspecial, .pgs #newspecialtmp { float: left; background: url(pn_post.png) no-repeat 0 0; }
+#post_reply, #post_replytmp { float: left; background: url(pn_reply.png) no-repeat 0 0; }
+#newspecial img, #newspecialtmp img, #post_reply img, #post_replytmp img { opacity: 0; filter: alpha(opacity=0); }
+.moodfm_btn { background-image: url(mood_input_btn.png) !important; }
+#create_group_btn { display: block; background: url(create_group.png) no-repeat 0 0; }
+#create_group_btn img { opacity: 0; filter: alpha(opacity=0); }
+.el .ec .hot, .clct_list .xld .m { background-image: url(hotspot.gif); }
+.pll .s { background-image:url(polljoins.gif); }	
+.pg_follow #fastpostsubmit { background:url(flw_post.png) no-repeat 0 0}
+
+.pnc, a.pnc { background:url(pn.png) no-repeat 0 -48px;}
+.pnc:active { background-position: 0 -71px; }
+.tb_h .o a{ background:#D88B15}
+
+#scrolltop{ background: url(scrolltop.png) no-repeat 50% 0;}
+
+/*列表页左侧*/
+.bdl { float: left; overflow: hidden; border: 1px solid #F4E39F!important; background-color: #F5F9F5!important; }
+	.ie6 .bdl { position: relative; }
+	.bdl_h { height: 32px; line-height: 22px; }
+.bdl .tbn { margin: 10px; }
+	/* 分区 */
+	.bdl dl { margin: -1px -10px 0; }
+		.bdl dt { overflow: hidden; height: 27px; line-height: 27px; border: solid #F4E39F!important; border-width: 1px 0!important; background: #F5F9FB url(titlebg_sd.png) repeat-x 100% 0; }
+			.bdl dt a { display: block; padding: 0 15px 0 10px; }
+				.bdl dt a:hover, .bdl_a a:hover { text-decoration: none; }
+	/* 版块，默认收起 */
+	.bdl dd { display: none; }
+		.bdl dd a { display: block; margin: 0 3px; padding: 0 7px; height: 26px; line-height: 26px; overflow: hidden; }
+	/* 展开的分区 */
+	.bdl dl.a { padding-bottom: 4px; background-color: #FFF; }
+		.bdl dl.a dt { margin-bottom: 3px; background-position: 100% -27px; }
+		.bdl dl.a dd, .bdl_fav dd { display: block; overflow: hidden; zoom: 1; }
+			/* 当前版块 */
+			.bdl dd.bdl_a a { background-color: #F5F9F5!important; font-weight: 700; color:#C64009!important; }
+			
+/* pgs --> pages & postbutton 分页、发帖按钮, pgb -->返回首页, nxt -->下一页 */
+.pg a, .pg strong, .pgb a{ border:1px solid #ccc;}
+.pg a:hover, .pgb a:hover { border-color:#E3B91B; color:#E3B91B; }
+.pg strong { background-color: #E3B91B; color:#FFF;}

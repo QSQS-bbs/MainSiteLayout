@@ -1,0 +1,36 @@
+
+<!--{hook/global_footer_mobile}-->
+
+
+        <div class="c2 a3">
+            <p class="w ad_box_b">
+                <a href="$nav">{lang homepage}</a>|
+				<!--{if $_G['setting']['mobile']['mobilesimpletype']}-->
+				<a href="{$_G['setting']['mobile']['simpletypeurl'][0]}" class="xw0" title="{lang mobiletype}">{lang no_simplemobiletype}</a>
+				<!--{else}-->
+				{lang no_simplemobiletype}<!--{/if}-->|
+				<!--{if !$_G['setting']['mobile']['mobilesimpletype']}-->
+				<a href="{$_G['setting']['mobile']['simpletypeurl'][1]}" class="xw0" title="{lang simplemobiletype}">{lang simplemobiletype}</a>
+				<!--{else}-->{lang simplemobiletype}
+				<!--{/if}-->
+				|<a href="{$_G['setting']['mobile']['nomobileurl']}" class="xw0" title="{lang nomobiletype}">{lang nomobiletype}</a>
+            </p>
+        </div>
+        
+        <div class="">
+            <a href="#header" class="btn_jump_header f9_a">{lang scrolltop}</a>
+        </div>
+        
+        <div class="">
+        </div>
+        
+        <div class="w a3 b1 c4 f12 footer_a f2_a">2007-2013 $_G['setting']['sitename']<br/>  $_G['setting']['siteurl']</div>
+</div>
+		</body>
+</html>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->

@@ -1,0 +1,16 @@
+<!--{subtemplate common/header}-->
+
+<div class="appl">
+			<div class="tbn">
+				<h2 class="mt bbda">{lang follow}</h2>
+				<ul>
+					<li$actives[follow]><a href="home.php?mod=follow&view=follow">{lang follow_following}</a></li>
+					<li$actives[special]><a href="home.php?mod=follow&view=special">{lang follow_special_following}</a></li>
+					<li$actives[other]><a href="home.php?mod=follow&view=other">{lang follow_hall}</a></li>
+					<!--{hook/follow_nav_extra}-->
+				</ul>
+			</div>
+		</div>
+
+
+<!--{subtemplate common/footer}-->

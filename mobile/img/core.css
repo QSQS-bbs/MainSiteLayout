@@ -1,0 +1,45 @@
+/* Reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0 }
+html, body {height: 100%;}
+table { border-collapse: collapse; border-spacing: 0 }
+fieldset, img { border: 0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal }
+caption, th { text-align: left }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
+h4 {font-size:14px;color:#b5e3fb;margin-bottom:10px;}
+q:before, q:after { content: '' }
+a:hover: { cursor:pointer;}
+abbr, acronym { border: 0; font-variant: normal }
+sup { vertical-align: text-top }
+sub { vertical-align: text-bottom }
+input, textarea, select { font-family: inherit; font-size: inherit; *font-size: 100%; font-weight: inherit }
+legend { color: #000 }
+:focus {outline:0;}
+
+input.text { border: 1px solid #c9c9c9; border-radius: 4px; -webkit-border-radius:4px; -moz-border-radius:4px; padding:0 5px; height:30px; line-height:30px; width: 200px; vertical-align: top; }
+
+/* Basic */
+.err { color: #fe2617 }
+.pic a:hover { background: none }
+.clearfix { zoom: 1; }
+.clearfix:after { visibility: hidden; display: block; font‐size: 0; content: " "; clear: both; height: 0 }
+.hidden {display:none;}
+.block {display: block;}
+
+/* Font,  Link & Container */
+body { color: #555; font: 12px/1.8 "Hiragino Sans GB","Microsoft Yahei","Helvetica Neue",Helvetica,Arial,Sans-serif; }
+pre { font: 12px/1.8 "Hiragino Sans GB","Microsoft Yahei","Helvetica Neue",Helvetica,Arial,Sans-serif;  }
+code{ font-family: courier new,courier,monospace }
+h1, h2 { color: #444;font-weight:normal; }
+h1 { font-size: 20px; }
+h2 { font-size: 14px }
+a { color: #00b4ff; text-decoration: none;}
+a:hover {cursor:pointer; text-decoration:underline;}
+textarea { border: 1px solid #ccc; overflow: auto; padding: 4px 3px }
+.error { color: #f66 }
+.right { float:right;}
+.left {float:left;}
+
+/* Button */
+button { cursor: pointer; _cursor: hand }
+

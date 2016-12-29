@@ -1,0 +1,36 @@
+<!--{subtemplate mobile/common/header}-->
+<!--{hook/index_top_mobile}-->
+<div id="container"><a name="top"></a>
+<div class="w2 bd13 pagin_box_a">
+$linkmenu
+<a href="forum.php?mobile=yes" class="bt f">{lang back}{lang homepage}</a> 
+</div>
+
+
+	<!--{loop $new_lists $new_list}-->
+
+<div class="w1 bd2" style="">	
+    <p class="pb1 c2" id="joke9007">
+<img src="./uc_server/avatar.php?uid=$new_list[poster]&size=small"  width="25" height="25" class="joke_head_a"/>
+    <a href="forum.php?mod=$new_list[linkmod]&tid=$new_list[tid]&mobile=yes&amp;goto=lastpost#lastpost">$new_list[poster]</a>{lang poston}$new_list[time]
+    </p>
+    <div class="joke_box joke_list_page">
+    <p class="pb1 c2" >
+	<a target="_blank" href="forum.php?mod=$new_list[linkmod]&tid=$new_list[tid]&mobile=yes&amp;goto=lastpost#lastpost" class="joke_tx p_joke_tx" $new_list[highlight]>$new_list[subject]</a>
+	    <a href="forum.php?mod=$new_list[linkmod]&tid=$new_list[tid]&mobile=yes&amp;goto=lastpost#lastpost" class="btn_joke"><img src="{$iterwapdir}/mobile/img/03.jpg" alt="{lang debate_support}" class="ico_joke" />$new_list[views]{lang debate_support} <img src="{$iterwapdir}/mobile/img/05.jpg" alt="{lang collection_commentnum}" class="ico_joke" />$new_list[replies]{lang collection_commentnum}</a>
+
+	</p>
+    </div>
+</div>
+	<!--{/loop}-->
+
+
+<div class="w2 bd13 pagin_box_a">
+    $pagelist
+<a href="forum.php?mobile=yes" class="bt f">{lang back}{lang homepage}</a> 
+</div>
+
+
+</div>
+<!--{hook/index_bottom_mobile}-->
+<!--{subtemplate mobile/common/footer}-->

@@ -1,0 +1,117 @@
+﻿/* CSS Document */
+
+
+body{background:#8DD60B url({IMGDIR}/eis_bg.png) repeat-x 0 0;}
+.eis_bgtop{ background:url({IMGDIR}/eis_bgtop.jpg) no-repeat center top;}
+.wp1000{ width:990px; margin:0px auto;}
+
+#eis_toptb{ height:30px; line-height:30px; overflow:hidden; background:#66D0E8;}
+#eis_toptb a{ color:#FFF; margin:0px 3px; font-size:13px;_font-size:12px;}
+
+#hd{ padding:27px 0 10px 0;}
+#hd h2 { background: url({IMGDIR}/eis_logo.png) no-repeat 0 0; }
+#hd h2 img { opacity: 0; filter: alpha(opacity=0); }
+#um,#um a,#um .pipe{ color:#05303A}
+
+/*主體頁面*/
+.eis_wp{}
+.eis_wpl{ background:url({IMGDIR}/eis_wpl.png) repeat-y 0 0;}
+.eis_wpt{ padding:4px 4px 15px 4px; background:url({IMGDIR}/eis_wpt.jpg) no-repeat 0 0;}
+.eis_wpbot{ height:138px; margin-top:-10px; background:url({IMGDIR}/eis_wpbot.png) repeat-x 0 bottom;}
+.eis_ft{  height:138px; background:url({IMGDIR}/eis_ft.png) no-repeat center 0}
+.eis_ft #ft{ border:none; padding:70px 10px 0px 10px; width:960px;}
+/*導航*/
+#eis_nv { overflow: hidden; height:50px; padding:0px 5px;background:url({IMGDIR}/eis_nv.png) no-repeat 0 0;}
+	#eis_nv li { float: left; padding-right:2px; height: 50px; line-height: 50px; font-weight: 700; font-size: 15px; background:url({IMGDIR}/eis_nv_li.png) no-repeat 100% center;}
+		.ie_all #eis_nv li { line-height: 53px; }
+		.ie6 #eis_nv li { line-height: 50px; }
+		#eis_nv li a { float: left; padding: 0 25px; height: 50px; }
+			#eis_nv li a { color: #FFF; }
+			#eis_nv li span { display: none; }
+		#eis_nv li.a {}
+			#eis_nv li.a a { color:#fff; background:url({IMGDIR}/eis_nv_a.png) no-repeat center center;}
+			#eis_nv li a:hover { color:#fff; text-decoration:none; background:url({IMGDIR}/eis_nv_ho.png) no-repeat center center;}
+			#eis_nv li.hover a:hover, #eis_nv li.hover a {  color:#fff; text-decoration:none; background:url({IMGDIR}/eis_nv_ho.png) no-repeat center center;}
+
+#qmenu{ margin-top:12px; color:#FFF;}
+/*二級導航*/
+.ie6 .h_pop{ margin-left:-450px; margin-top:-143px;}
+#mu { border:none!important;}
+#mu ul{ height:40px; background:url({IMGDIR}/mu_bg.png) repeat-x 0 100%!important;border:none!important;}
+#mu  li{ height:40px; line-height:30px; overflow:hidden;}
+
+/*登陆*/
+#ls_username{}
+#ls_password{}
+
+/*搜索*/
+#scbar{ margin-top:10px; border-bottom:1px solid #EDEDED}
+.scbar_type_td { padding-right:10px;background: url({IMGDIR}/search.png) no-repeat 0 -370px; }
+#scbar .pn .xi2{ color:#333!important}
+/*ct*/
+#nv_member{ min-height:450px;}
+#ct{ min-height:430px;}
+#ct .fl{ border:none;}
+#ct .fl .bm{ margin-bottom:10px; background:url({IMGDIR}/eis_bar_bg.png) repeat-x 0 0;}
+#ct .fl .bm .bm_h{ height:45px; line-height:40px; overflow:hidden; padding-left:0px; border:none; background:url({IMGDIR}/eis_bar_r.jpg) no-repeat right 0}
+#ct .fl .bm .bm_h h2 { height:45px; line-height:40px; overflow:hidden; padding-left:10px; background:url({IMGDIR}/eis_bar_l.jpg) no-repeat 0 0}
+#ct .fl .bm .bm_h h2 a{ color:#FFF;}
+#ct .fl .bm .bm_h .o a, #ct .fl .bm .bm_h .y a{ color:#fff!important;}
+#ct .fl .bm .bm_h .o img{ margin-top:15px;}
+#ct .fl .bm .bm_c{ padding:0px; background:url({IMGDIR}/eis_thl_bg1.png) repeat-y 0 0;}
+#ct .fl .bm .eis_thl_bg1{ background:url({IMGDIR}/eis_thl_bg2.png) repeat-y right 0;}
+#ct .fl .bm .eis_thl_bg2{ background:url({IMGDIR}/eis_thl_bg3.png) repeat-x left bottom}
+#ct .fl .bm .eis_thl_bg3{ background:url({IMGDIR}/eis_thl_bg4.jpg) no-repeat left bottom;}
+#ct .fl .bm .eis_thl_bg4{ padding:5px 15px 15px 15px; background:url({IMGDIR}/eis_thl_bg5.jpg) no-repeat right bottom;}
+#ct .eis_bmw{ border:1px solid #CDCDCD!important}
+#ct .eis_bmw .bm_h{ border-bottom:1px solid #E4E4E4;border-top:1px solid #FFF;border-left:1px solid #FFF;border-right:1px solid #FFF;}
+
+
+	#eis_thread_types{ padding-left:30px; background:url({IMGDIR}/eis_title_l.png) no-repeat left 0;}
+	#thread_types{ padding:0px; height:35px; line-height:35px; border:none;verflow:hidden; background:url({IMGDIR}/eis_title.png) no-repeat right top;}
+	.pg_guide #thread_types{  padding-left:30px;}
+	#thread_types li{ height:35px; line-height:35px; overflow:hidden;}
+	#thread_types li a{ background:none; border:none; color:#FFF; display:block; height:35px; line-height:35px;}
+	
+	#modmenu{ height:31px; line-height:31px; padding-left:30px; padding-top:5px; background:url({IMGDIR}/eis_title.png) no-repeat right 0;}
+	#modmenu a{ color:#FFF; }
+	#modmenu .pipe{ color:#FFF;}
+
+#threadlist{ border:none; background:url({IMGDIR}/eis_th.png) repeat-x 0 0;}
+#threadlist .th{ height:45px;border:none; overflow:hidden; padding:0px; border:none; background:url({IMGDIR}/eis_thl.jpg) no-repeat 0 0}
+#threadlist .th table{  height:45px; border:none; overflow:hidden; padding:5px 10px 0px 10px; background:url({IMGDIR}/eis_thr.jpg) no-repeat right 0}
+#threadlist .th th,#threadlist .th td{ background:none;}
+.ie6 #threadlist .th th{ padding-left:15px;}
+
+#threadlist .bm_c{ padding:0px; background:url({IMGDIR}/eis_thl_bg1.png) repeat-y 0 0;}
+#threadlist .eis_thl_bg1{ background:url({IMGDIR}/eis_thl_bg2.png) repeat-y right 0;}
+#threadlist .eis_thl_bg2{ background:url({IMGDIR}/eis_thl_bg3.png) repeat-x left bottom}
+#threadlist .eis_thl_bg3{ background:url({IMGDIR}/eis_thl_bg4.jpg) no-repeat left bottom;}
+#threadlist .eis_thl_bg4{ padding:5px 15px 15px 15px; background:url({IMGDIR}/eis_thl_bg5.jpg) no-repeat right bottom;}
+
+#threadlist .bm_c th em,#threadlist .bm_c th em a{ color:#007CD5}
+/*列表页左侧*/
+.bdl { float: left; overflow: hidden; border: 1px solid #CBEFF8!important; background-color: #F5F9FB; }
+	.ie6 .bdl { position: relative; }
+	.bdl_h { height: 32px; line-height: 22px; }
+.bdl .tbn { margin: 10px; }
+	/* 分区 */
+	.bdl dl { margin: -1px -10px 0; }
+		.bdl dt { overflow: hidden; height: 27px; line-height: 27px; border: solid #BCEAF5!important; border-width: 1px 0!important; background: #F5F9FB url({IMGDIR}/titlebg_sd.png) repeat-x 100% 0; }
+			.bdl dt a { display: block; padding: 0 15px 0 10px; }
+				.bdl dt a:hover, .bdl_a a:hover { text-decoration: none; }
+	/* 版块，默认收起 */
+	.bdl dd { display: none; }
+		.bdl dd a { display: block; margin: 0 3px; padding: 0 7px; height: 26px; line-height: 26px; overflow: hidden; }
+	/* 展开的分区 */
+	.bdl dl.a { padding-bottom: 4px; background-color: #FFF; }
+		.bdl dl.a dt { margin-bottom: 3px; background-position: 100% -27px; }
+		.bdl dl.a dd, .bdl_fav dd { display: block; overflow: hidden; zoom: 1; }
+			/* 当前版块 */
+			.bdl dd.bdl_a a { background-color: #F5F9FB; font-weight: 700; color: {HIGHLIGHTLINK}; }
+
+.pnc,.pnc a{ border:none!important;}
+.tb .o,.tb .o a{ border:none;}
+
+/*广告*/
+.a_mu{ background:none; border:none; margin-top:10px;}
